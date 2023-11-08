@@ -52,7 +52,7 @@ class test_RunningApp(unittest.TestCase):
         result=Run.pace_km()
         self.assertEqual(result, 4.375)
 
-    #HINT:Look at the expected result string to understand how the print_run() function should format it's output string.
+    #Hint :Look at the expected result string to understand how the print_run() function should format it's output string.
     def test_print_run(self):
         Run=RunningApp(2, 15, 110)
         Result=Run.run_summary()
