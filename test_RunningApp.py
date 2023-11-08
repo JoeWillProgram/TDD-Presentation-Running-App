@@ -1,7 +1,8 @@
 import unittest, numpy as np
 from RunningApp import RunningApp
 
-# Format of RunningApp(miles, minutes, hearrate (BPM))
+#Format of RunningApp(miles, minutes, heartrate (BPM))
+#Getters and setters already made.
 class test_RunningApp(unittest.TestCase):
 
     #Use set_miles() to set miles equal to 3 and then use get_miles() to see if both functions worked.
@@ -19,13 +20,16 @@ class test_RunningApp(unittest.TestCase):
         self.assertEqual(Result, 3)
 
     #As you may have noticed before, there is no place to insert kilometers in the constructor, only with set_kilometers().
-    #make a private function called mi_to_km(). This function will be called whenever get_kilometers() is called.
+    #Make a private function called mi_to_km(). This function will be called whenever get_kilometers() is called.
+    #Return type should be np.float32().
     # HINT: 1 mile = 1.6km
     def test_mi_to_km(self):
         Run = RunningApp(5)
         result = Run.get_kilometers()
         self.assertEqual(result, 8)
 
+    #Make a private function called km_to_mi().
+    # Return type should be np.float32().
     # HINT: Same thing as before but backwards.
     def test_km_to_mi(self):
         Run = RunningApp()
@@ -33,12 +37,15 @@ class test_RunningApp(unittest.TestCase):
         result=Run.get_miles()
         self.assertEqual(result, np.float32(3.125))
 
-    #Pace is minutes per mile. Make a function called pace_mi which returns the amount of minutes per mile.
+    #Make a function called pace_mi which returns the amount of minutes per mile.
+    # Return type should be np.float32().
     def test_pace_mi(self):
         Run=RunningApp(3,21)
         result=Run.pace_mi()
         self.assertEqual(result, 7)
 
+    #Make a function called pace_km.
+    # Return type should be np.float32().
     # Hint: Same idea as before.
     def test_pace_km(self):
         Run=RunningApp(3,21)
