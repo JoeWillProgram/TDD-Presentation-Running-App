@@ -1,5 +1,8 @@
-import unittest, numpy as np
+import numpy as np
+import unittest
+
 from RunningApp import RunningApp
+
 
 #Format of RunningApp(miles, minutes, heartrate (BPM))
 #Getters and setters already made.
