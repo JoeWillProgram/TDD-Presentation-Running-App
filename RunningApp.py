@@ -8,11 +8,9 @@ class RunningApp:
 
     def set_miles(self, input_miles):
         self.miles = input_miles
-        self.kilometers = self.__mi_to_km()
 
     def set_kilometers(self, input_kilometers):
         self.kilometers = input_kilometers
-        self.miles = self.__km_to_mi()
 
     def set_minutes(self, input_minutes):
         self.minutes = input_minutes
@@ -31,8 +29,6 @@ class RunningApp:
     def get_kilometers(self):
         if self.miles == None:
             raise Exception("No miles entered, miles is nonetype. Kilometers are automatically gotten through conversion of miles.")
-        if self.kilometers == None:
-            self.kilometers=self.__mi_to_km()
         return self.kilometers
 
     def get_minutes(self):
@@ -42,39 +38,19 @@ class RunningApp:
         return self.heart_rate
 
     def __km_to_mi(self):
-        if self.kilometers==None:
-            raise Exception("No kilometers entered, kilometers is nonetype.")
-        return np.float32(self.kilometers/1.6)
+        pass
 
-    # Parameters:mile
-    # Will take in miles and return the distance as kilometers.
     def __mi_to_km(self):
-        if self.miles==None:
-            raise Exception("No miles entered, miles is nonetype. Miles: ")
-        return np.float32(self.miles*1.6)
+        pass
 
     def pace_mi(self):
-        if self.miles == None:
-            raise Exception("No miles entered, miles is nonetype.")
-        if self.minutes == None:
-            raise Exception("No minutes entered, minutes is nonetype.")
-        return np.float32(self.minutes/self.miles)
+        pass
 
     def pace_km(self):
-        if self.kilometers==None:
-            self.set_kilometers(self.__mi_to_km())
-        if self.minutes == None:
-            raise Exception("No minutes entered, minutes is nonetype.")
-        return np.float32(self.minutes/self.kilometers)
+        pass
 
     def run_summary(self):
-        # NOTE: For whatever reason, whenever self.get_kilometers() is used in an F-String it breaks the float32 decimal
-        # and makes it have more decimal points than it actually has, this was fixed in other uses by using float32, IDK why here.
-        string_km=str(self.get_kilometers())
-        output = "Summary:\n" \
-                 f"Distance: {self.get_miles()} miles / {string_km} kilometers\n" \
-                 f"Pace: {self.pace_mi()} minutes per mile / {self.pace_km()} minutes per kilometer\n" \
-                 f"Heart rate was {self.get_heart_rate()}bpm"
-        return output
+        # NOTE: Use str() around kilometers, otherwise it breaks. I have no idea why it does this.
+        pass
 
 

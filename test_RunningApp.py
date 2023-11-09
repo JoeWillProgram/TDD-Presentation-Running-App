@@ -10,16 +10,12 @@ class test_RunningApp(unittest.TestCase):
 
     #Use set_miles() to set miles equal to 3 and then use get_miles() to see if both functions worked.
     def test_set_get_miles(self):
-        Run = RunningApp()
-        Run.set_miles(3)
-        Result=Run.get_miles()
+
         self.assertEqual(Result, 3)
 
-    #Use set_kilometers to set kilometers equal to 3 and then use get_kilometers() to see if both functions worked.
+    #Use set_kilometers() to set kilometers equal to 3 and then use get_kilometers() to see if both functions worked.
     def test_get_kilometers(self):
-        Run = RunningApp()
-        Run.set_kilometers(3)
-        Result = Run.get_kilometers()
+
         self.assertEqual(Result, 3)
 
     #As you may have noticed before, there is no place to insert kilometers in the constructor, only with set_kilometers().
@@ -27,35 +23,31 @@ class test_RunningApp(unittest.TestCase):
     #Return type should be np.float32().
     # HINT: 1 mile = 1.6km
     def test_mi_to_km(self):
-        Run = RunningApp(5)
-        result = Run.get_kilometers()
+
         self.assertEqual(result, 8)
 
     #Make a private function called km_to_mi().
     # Return type should be np.float32().
     # HINT: Same thing as before but backwards.
+    # HINT: What is 3.125 miles equal to?
     def test_km_to_mi(self):
-        Run = RunningApp()
-        Run.set_kilometers(5)
-        result=Run.get_miles()
+
         self.assertEqual(result, np.float32(3.125))
 
     #Make a function called pace_mi which returns the amount of minutes per mile.
-    # Return type should be np.float32().
+    # NOTE: There is no seconds just minutes, so you'll get like 2.5 minutes.
+    # HINT: Return type should be np.float32().
     def test_pace_mi(self):
-        Run=RunningApp(3,21)
-        result=Run.pace_mi()
-        self.assertEqual(result, 7)
+        self.assertEqual(result, )
 
     #Make a function called pace_km.
-    # Return type should be np.float32().
-    # Hint: Same idea as before.
+    #Return type should be np.float32().
+    # HINT: Same idea as before.
     def test_pace_km(self):
-        Run=RunningApp(3,21)
-        result=Run.pace_km()
-        self.assertEqual(result, 4.375)
+        self.assertEqual(result, )
 
-    #Hint :Look at the expected result string to understand how the print_run() function should format it's output string.
+    #Write a function called print run which produces of a run.
+    # HINT:Look at the expected result string to understand how the print_run() function should format it's output string.
     def test_print_run(self):
         Run=RunningApp(2, 15, 110)
         Result=Run.run_summary()
